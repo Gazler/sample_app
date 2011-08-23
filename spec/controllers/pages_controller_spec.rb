@@ -2,6 +2,7 @@ require 'spec_helper'
 
 describe PagesController do
   include ApplicationHelper
+  render_views
 
   describe "GET 'home'" do
     it "should be successful" do
@@ -35,7 +36,7 @@ describe PagesController do
       get 'about'
       response.should be_success
     end
-    
+
     it "should have the right title" do
       get 'about'
       response.should have_selector("title",
@@ -44,3 +45,4 @@ describe PagesController do
 
   end
 end
+
